@@ -1,0 +1,150 @@
+/* =============================================
+   PRODUTOS PAGE STYLES
+   ============================================= */
+
+/* ---- Page Header ---- */
+.page-header {
+  padding-top: calc(var(--nav-h) + 50px);
+  padding-bottom: 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+.page-header .container { padding-bottom: 0; }
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 600; color: var(--navy);
+  letter-spacing: -.02em; margin-bottom: .5rem;
+}
+.page-desc {
+  font-size: 1rem; color: var(--text-muted);
+  font-weight: 300; margin-bottom: 2rem;
+}
+.page-tabs {
+  display: flex; gap: 0; border-bottom: none;
+  margin-top: .5rem;
+}
+.page-tab {
+  padding: .8rem 1.8rem;
+  font-size: .88rem; font-weight: 500;
+  color: var(--text-muted);
+  border-bottom: 2px solid transparent;
+  transition: all .2s; display: flex; align-items: center; gap: .4rem;
+}
+.page-tab:hover { color: var(--navy); }
+.page-tab.active {
+  color: var(--navy); border-bottom-color: var(--copper);
+}
+
+/* ---- Linha Header ---- */
+.linha-header {
+  display: flex; justify-content: space-between;
+  align-items: flex-end; gap: 2rem;
+  margin-bottom: 2.5rem; flex-wrap: wrap;
+}
+.linha-badge-group { display: flex; gap: .5rem; flex-wrap: wrap; align-items: flex-end; }
+
+/* ---- Filter Bar ---- */
+.filter-bar {
+  display: flex; gap: .5rem; flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.filter-btn {
+  padding: .4rem 1.1rem;
+  font-size: .82rem; font-weight: 500;
+  border: 1.5px solid var(--border);
+  border-radius: 99px;
+  background: var(--white);
+  color: var(--text-muted);
+  transition: all .18s;
+}
+.filter-btn:hover { border-color: var(--navy); color: var(--navy); }
+.filter-btn.active {
+  background: var(--navy); border-color: var(--navy);
+  color: var(--white);
+}
+
+/* ---- Products Grid ---- */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* ---- Product Card ---- */
+.product-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: box-shadow .25s, transform .25s;
+}
+.product-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+.product-img {
+  height: 160px; display: flex;
+  align-items: center; justify-content: center;
+  padding: 1.5rem;
+}
+.product-img-alu {
+  background: linear-gradient(135deg, #F5F2EE, #EDE8E2);
+}
+.product-img-branca {
+  background: linear-gradient(135deg, #F5F8FA, #EBF0F5);
+}
+.product-img svg { max-height: 120px; width: auto; }
+
+.product-card-body {
+  padding: 1.3rem 1.4rem 1.5rem;
+  display: flex; flex-direction: column;
+  flex: 1; gap: .6rem;
+}
+.product-meta { margin-bottom: .1rem; }
+.product-card-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--navy); line-height: 1.2;
+}
+.product-card-body p {
+  font-size: .82rem; color: var(--text-muted);
+  font-weight: 300; line-height: 1.6;
+  flex: 1;
+}
+.product-specs {
+  border-top: 1px solid var(--border);
+  padding-top: .75rem; margin-top: .3rem;
+  display: flex; flex-direction: column; gap: .3rem;
+  margin-bottom: .75rem;
+}
+.spec {
+  display: flex; justify-content: space-between;
+  align-items: center; gap: .5rem;
+}
+.spec span { font-size: .72rem; color: var(--text-light); font-weight: 300; }
+.spec strong { font-size: .75rem; color: var(--text); font-weight: 500; text-align: right; }
+
+/* ---- CTA Section ---- */
+.produtos-cta-section { background: var(--bg2); }
+.produtos-cta {
+  text-align: center;
+  padding: 3rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1100px) {
+  .products-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 820px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .linha-header { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 520px) {
+  .products-grid { grid-template-columns: 1fr; }
+  .page-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
